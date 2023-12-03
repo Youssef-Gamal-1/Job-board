@@ -19,9 +19,9 @@ class JobController extends Controller
     {
         //
     }
-    public function show(string $id)
+    public function show(Job $job)
     {
-        //
+        return view('job.show',['job' => $job]);
     }
 
     public function edit(string $id)
