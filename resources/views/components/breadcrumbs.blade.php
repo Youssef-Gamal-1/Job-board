@@ -6,7 +6,7 @@
         @foreach($links as $label => $link)
             <li>→</li>
             <li>
-                <a href="{{$link}}">{{$label}}</a>
+                <a href="{{$link}}" @class(['font-medium' => !$link])>{{$label}}</a>
             </li>
         @endforeach
     </ul>

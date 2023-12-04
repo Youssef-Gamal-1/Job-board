@@ -7,7 +7,7 @@
     </div>
     <div class="mb-4 flex justify-between text-sm text-slate-500 items-center">
         <div>
-            <span class="mr-2">Company name</span>
+            <span class="mr-2 font-medium">Company name</span>
             <span class="font-medium">{{$job->location}}</span>
         </div>
         <div>
@@ -15,8 +15,5 @@
             <x-tag>{{$job->category}}</x-tag>
         </div>
     </div>
-    <p class="text-sm text-slate-500 mb-4">
-        {!! nl2br(e($job->description)) !!} {{-- e(mixed value) => the alt of echo --}}
-    </p>
     {{$slot}}
 </x-card>
