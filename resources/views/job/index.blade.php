@@ -13,11 +13,29 @@
                 <div>
                     <div class="mb-1 font-semibold">Salary</div>
                     <div class="flex space-x-2">
-                        <x-text-input name="min_salary" placeholder="From" value=""/>
-                        <x-text-input name="max_salary" placeholder="To" value=""/>
+                        <x-text-input name="min_salary" placeholder="From" value="{{request('min_salary')}}"/>
+                        <x-text-input name="max_salary" placeholder="To" value="{{request('max_salary')}}"/>
                     </div>
                 </div>
-                <div>3</div>
+                <div>
+                    <div class="mb-1 font-semibold">Experience</div>
+                    <label for="experience" class="mb-1 flex items-center">
+                        <input type="radio" name="experience" value="">
+                        <span class="ml-2">All</span>
+                    </label>
+                    <label for="experience" class="mb-1 flex items-center">
+                        <input type="radio" name="experience" value="entry">
+                        <span class="ml-2">Entry</span>
+                    </label>
+                    <label for="experience" class="mb-1 flex items-center">
+                        <input type="radio" name="experience" value="intermediate">
+                        <span class="ml-2">Intermediate</span>
+                    </label>
+                    <label for="experience" class="mb-1 flex items-center">
+                        <input type="radio" name="experience" value="senior">
+                        <span class="ml-2">Senior</span>
+                    </label>
+                </div>
                 <div>4</div>
             </div>
             <button class="w-full">Filter</button>
