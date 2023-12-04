@@ -6,9 +6,9 @@
     </label>
     @foreach($options as $option)
         <label for="{{$name}}" class="mb-1 flex items-center">
-            <input type="radio" name="{{$name}}" value="entry"
-                @checked('entry' === request($name))/>
-            <span class="ml-2">Entry</span>
+            <input type="radio" name="{{$name}}" value="{{$option}}"
+                @checked($option === request($name))/>
+            <span class="ml-2">{{ucfirst($option)}}</span>
         </label>
     @endforeach
 

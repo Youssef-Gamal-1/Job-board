@@ -29,6 +29,9 @@ class JobController extends Controller
         )->when(//filtering by experience
             request('experience'),
             fn($query) => $query->where('experience',request('experience'))
+        )->when(//filtering by category
+            request('category'),
+            fn($query) => $query->where('category',request('category'))
         );
         return view('job.index',['jobs' => $jobs->get()]);
     }
