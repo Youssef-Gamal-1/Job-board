@@ -9,7 +9,7 @@
                 <div>
                     <div class="mb-1 font-semibold">Search</div>
                     <x-text-input name="search"
-                                  form-id="filtering-form"
+                                  form-id="filtering-form"  {{-- The $formId var in the component (this is the way we input the camel case)--}}
                                   placeholder="Search for any text"
                                   value="{{request('search')}}"/>
                 </div>
@@ -36,7 +36,7 @@
                     />
                 </div>
             </div>
-            <button class="w-full">Filter</button>
+            <x-button class="w-full">Filter</x-button>
         </form>
     </x-card>
     @foreach($jobs as $job)

@@ -11,8 +11,16 @@
             <span class="font-medium">{{$job->location}}</span>
         </div>
         <div>
-            <x-tag class="mr-2">{{ucfirst($job->experience)}}</x-tag>
-            <x-tag>{{$job->category}}</x-tag>
+            <x-tag class="mr-2">
+                <a href="{{route('jobs.index',['experience' => $job->experience])}}">
+                    {{ucfirst($job->experience)}}
+                </a>
+            </x-tag>
+            <x-tag>
+                <a href="{{route('jobs.index',['category' => $job->category])}}">
+                    {{$job->category}}
+                </a>
+            </x-tag>
         </div>
     </div>
     {{$slot}}
