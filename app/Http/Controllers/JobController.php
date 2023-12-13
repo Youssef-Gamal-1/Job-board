@@ -11,7 +11,7 @@ class JobController extends Controller
     {
         $filters = request()->only('search','min_salary','max_salary','experience','category');
         // scope function in the model scopeFilter()
-        return view('job.index',['jobs' => Job::filter($filters)->get()]);
+        return view('job.index',['jobs' => Job::with('employer')->filter($filters)->get()]);
     }
     public function create()
     {
@@ -23,7 +23,7 @@ class JobController extends Controller
     }
     public function show(Job $job)
     {
-        return view('job.show',['job' => $job]);
+        return view('job.show',['job' => $job->load('employer')]);
     }
 
     public function edit(string $id)

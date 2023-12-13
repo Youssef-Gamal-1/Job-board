@@ -16,7 +16,7 @@ class Job extends Model
 
     public function employer(): BelongsTo
     {
-        $this->belongsTo(Employer::class);
+        return $this->belongsTo(Employer::class);
     }
     public function scopeFilter(Builder|QueryBuilder $query, array $filters): Builder | QueryBuilder
     {
@@ -26,6 +26,8 @@ class Job extends Model
                 $query->where(
                     fn($query) => $query->where('title','like','%' . $search . '%')
                         ->orWhere('description','like','%' . $search . '%')
+                        ->orWhereHas('employer',fn($query) =>
+                            $query->where('company_name','like','%' . $search . '%'))
                 );
             }
         )->when( // filtering by min salary
