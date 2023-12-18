@@ -11,7 +11,7 @@
             </div>
             <div class="mb-8">
                 <label for="pass" class="mb-2 block text-sm font-medium text-slate-900">Password</label>
-                <x-text-input type="password" name="pass" id="pass"/>
+                <x-text-input type="password" name="password" id="pass"/>
             </div>
             <div class="mb-8 flex justify-between text-sm font-medium">
                 <div class="flex items-center space-x-2">
