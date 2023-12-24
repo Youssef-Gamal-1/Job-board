@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobApplication;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class MyJobApplicationController extends Controller
@@ -21,8 +23,14 @@ class MyJobApplicationController extends Controller
         );
     }
 
-    public function destroy(string $id)
+    // using $myJobApplication as it is in the route to load its attributes
+    // not using $jobApplication
+    public function destroy(JobApplication $myJobApplication): RedirectResponse
     {
-        //
+        $myJobApplication->delete();
+        return redirect()->back()->with(
+            'success',
+            'Job application removed!'
+        );
     }
 }

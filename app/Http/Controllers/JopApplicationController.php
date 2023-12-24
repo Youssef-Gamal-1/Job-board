@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\JobApplication;
 use Illuminate\Http\Request;
 
 class JopApplicationController extends Controller
@@ -27,6 +28,6 @@ class JopApplicationController extends Controller
 
     public function destroy(string $id)
     {
-        //
+
     }
 }
