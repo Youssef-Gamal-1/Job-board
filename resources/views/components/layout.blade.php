@@ -37,6 +37,14 @@
             <p>{{session('success')}}</p>
         </div>
     @endif
+    @if(session('error'))
+        <div role="alert"
+             class="my-8 p-4 rounded-md border-l-4 border-red-300 text-red-700 opacity-75 bg-red-100"
+        >
+            <p class="font-bold">Error!</p>
+            <p>{{session('error')}}</p>
+        </div>
+    @endif
     {{$slot}}
 </body>
 </html>
