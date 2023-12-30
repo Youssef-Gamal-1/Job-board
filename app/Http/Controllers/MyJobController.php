@@ -6,12 +6,9 @@ use Illuminate\Http\Request;
 
 class MyJobController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return view('my_job.index');
     }
 
     /**

@@ -38,5 +38,6 @@ Route::middleware('auth')->group(function(){
             ->only(['index','destroy']);
     Route::resource('employer',\App\Http\Controllers\EmployerController::class)
             ->only(['create','store']);
+    Route::middleware('employer')->resource('my_jobs',\App\Http\Controllers\MyJobController::class);
 });
 //Route::delete('auth','AuthController@destroy'); the alt for the above
