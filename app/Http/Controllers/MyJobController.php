@@ -9,7 +9,12 @@ class MyJobController extends Controller
 {
     public function index()
     {
-        return view('my_job.index');
+        return view('my_job.index',[
+            'jobs' => auth()->user()->employer
+                    ->jobs()
+                    ->with(['employer','jobApplications','jobApplications.user'])
+                    ->get()
+        ]);
     }
 
     /**
@@ -35,7 +40,7 @@ class MyJobController extends Controller
         ]);
         auth()->user()->employer->jobs()->create($validatedData);
 
-        return redirect()->route('my_jobs')
+        return redirect()->route('my_jobs.index')
                 ->with('success','Job created successfully!');
     }
 
