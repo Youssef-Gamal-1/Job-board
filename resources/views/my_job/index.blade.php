@@ -22,15 +22,17 @@
                          </div>
                     </div>
                 @empty
-                    <div>No applications yet</div>
+                    <div class="mb-3">No applications yet</div>
                 @endforelse
                     <div class="flex space-x-2">
                         <x-link-button href="{{ route('my_jobs.edit', $job) }}">Edit</x-link-button>
-                        <form action="{{route('my_jobs.destroy',$job)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <x-button>Delete</x-button>
-                        </form>
+                        @if(!$job->deleted_at)
+                            <form action="{{route('my_jobs.destroy',$job)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <x-button>Delete</x-button>
+                            </form>
+                        @endif
                     </div>
             </div>
         </x-job-card>

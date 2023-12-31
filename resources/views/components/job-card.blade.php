@@ -8,7 +8,10 @@
     <div class="mb-4 flex justify-between text-sm text-slate-500 items-center">
         <div>
             <span class="mr-2 font-medium">{{$job->employer->company_name}}</span>
-            <span class="font-medium">{{$job->location}}</span>
+            <span class="mr-2 font-medium">{{$job->location}}</span>
+            @if($job->deleted_at)
+                <span class="text-xs text-red-500">Deleted</span>
+            @endif
         </div>
         <div>
             <x-tag class="mr-2">
