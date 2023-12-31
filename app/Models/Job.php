@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Builder;
 class Job extends Model
 {
     use HasFactory;
+    protected $fillable = ['title','salary','location','description','experience','category'];
     public static array $experience = ['entry','intermediate','senior'];
     public static array $categories = ['It','Finance','Sales','Marketing'];
 

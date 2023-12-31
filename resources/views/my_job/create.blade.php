@@ -31,9 +31,9 @@
                     <x-radio-group name="experience" :value="old('experience')"
                                    :all-option="false"
                                    :options="array_combine(
-                array_map('ucfirst', \App\Models\Job::$experience),
-                \App\Models\Job::$experience,
-            )" />
+                                array_map('ucfirst', \App\Models\Job::$experience),
+                                \App\Models\Job::$experience,
+                        )" />
                 </div>
 
                 <div>
